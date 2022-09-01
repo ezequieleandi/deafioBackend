@@ -1,1 +1,1 @@
-[{"nombre":"planta","precio":1200,"id":"1"},{"nombre":"tierra","precio":2300,"id":"3"}]
+[]
