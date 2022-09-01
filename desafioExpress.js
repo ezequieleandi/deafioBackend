@@ -26,6 +26,7 @@ class Productos {
         try {
             this.fileProducts = fileProducts,
             this.products = JSON.parse(fs.readFileSync(fileProducts, "utf-8"))
+            console.log(this.products)
         } catch (e) {
             fs.writeFileSync(fileProducts, JSON.stringify([]));
             this.products = [];
@@ -37,7 +38,7 @@ class Productos {
         product.id = id;
         this.products.push(product);
 
-        return fs.promises.writeFile(this.fileName, JSON.stringify(this.products))
+        return fs.promises.writeFile(this.fileProducts, JSON.stringify(this.products))
         .then(() => {return id})
         .catch((err) => { return err})
     }
